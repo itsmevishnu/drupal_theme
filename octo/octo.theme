@@ -1,0 +1,72 @@
+<?php
+
+/**
+ * @file: Theme functionality  are included here.
+ */
+
+use \Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements form_system_theme_settings_alter hook.
+ */
+function octo_form_system_theme_settings_alter(&$form, &$form_state, $form_id =  NULL){
+	if(isset($form_id)) {
+		return;
+	}
+
+	$form['copyright'] = array(
+		'#type' => 'textfield',
+		'#title' => 'Enter the copyright text',
+		'#default_value' => theme_get_setting('copyright'),
+		'#description' => 'Enter the copyright text to show in the bottom of the website'
+	);
+	$form['address'] = array(
+		'#type' => 'textfield',
+		'#title' => 'Enter the address',
+		'#default_value' =>theme_get_setting('address') ,
+		'#description' => 'Enter the address of the company'
+	);
+	$form['telephone'] = array(
+		'#type' => 'textfield',
+		'#title' => 'Enter the telephone number',
+		'#default_value' => theme_get_setting('telephone'),
+		'#description' => 'Enter the telephone number of the company'
+	);
+}
+
+
+/**
+ * Implements preprocess_page hook.
+ *
+ * @param      <type>  $variables  The variables
+ */
+function octo_preprocess_page(&$variables) {
+
+	$variables['host'] = \Drupal::request()->getHost();
+	//Creating a relative path to the logo.
+	$variables['logo_url'] = file_create_url(theme_get_setting('logo.url'));
+
+	$variables['copyright'] = theme_get_setting('copyright');
+	$variables['address'] = theme_get_setting('address');
+	$variables['telephone'] = theme_get_setting('telephone');
+	$variables['email'] = \Drupal::config('system.site')->get('mail');
+
+	//Gets the page title.
+	$request = \Drupal::request();
+  	if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
+    	$title = \Drupal::service('title_resolver')->getTitle($request, $route);
+  	}
+  	$variables['page_title'] = $title;
+
+}
+
+/**
+ * Implements preprocess_views_view_fields hook.
+ */
+
+function octo_preprocess_views_view_fields(&$vars) {
+	if ($vars['view']->name == "drupal_8" && $vars['view']->current_display == "services"){
+		$title = $vars['fields']['title']->content;
+		$vars['fields']['title']->content = "<h4>" . $a . "</h4>";
+	}
+}

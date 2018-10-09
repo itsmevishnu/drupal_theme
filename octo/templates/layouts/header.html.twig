@@ -1,0 +1,51 @@
+<header class="header" role="banner">
+	<div class="header-top">
+		<div class="container">
+			<div id="block-socialicons" class="block">
+				{{ page.header_social_menu }}
+				<ul class="social-icons">
+					<li><a class="button--icon" target="_blank" href="https://www.facebook.com" title=""><i class="fa fa-facebook"></i></a></li>
+					<li><a class="button--icon" target="_blank" href="https://www.linkedin.com" title=""><i class="fa fa-linkedin"></i></a></li>
+					<li><a class="button--icon" target="_blank" href="https://twitter.com" title=""><i class="fa fa-twitter"></i></a></li>
+					<li><a class="button--icon" target="_blank" href="https://plus.google.com" title=""><i class="fa fa-google-plus"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="header-nav container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main">
+				<i class="fa fa-bars"></i>
+			</button>
+
+			<h1 class="logo">
+				<a href="{{ host }}" title="{{ site_name }}" rel="home" id="logo">
+					<img src="{{ logo_url }}" alt="{{ site_name }}">
+				</a>
+			</h1>
+		</div>
+		<div class="navbar-search">
+			<div class="search-icons">
+				<a class="open-form"><i class="fa fa-search"></i></a>
+				<a class="close-form"><i class="fa fa-times"></i></a>
+			</div>
+			<div class="region region-header-search">
+				<div class="search-block-form block" id="block-octo-search" role="search">
+
+					<form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
+						<div class="form-item form-type-search form-item-keys form-no-label">
+							<input title="Enter the terms you wish to search for." class="search form-search form-control" placeholder="Search" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128">
+						</div>
+						<div class="form-actions form-wrapper" id="edit-actions">
+							<input type="submit" id="edit-submit" name="" value="Search" class="button form-submit">
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+		<div class="navbar-main navbar-collapse collapse">
+			{{ page.main_menu }}
+		</div>
+	</div>
+</header>

@@ -1,0 +1,36 @@
+<footer id="footer" role="contentinfo">
+	<div class="container main-footer">
+		<div class="row">
+			<div class="col-md-4">
+				<h2>Newsletter</h2>
+				{{ page.footer_1 }}
+			</div>
+
+			<div class="col-md-4">
+				<h2>About Us</h2>
+				{{ page.footer_2 }}
+			</div>
+
+			<div class="col-md-4">
+				<h2>Contact Us</h2>
+				<ul class="contact">
+					<li><i class="fa fa-map-marker"></i><strong>Address:</strong>{{ address }}</li>
+					<li><i class="fa fa-phone"></i> <strong>Phone:</strong>{{ telephone }}</li>
+					<li><i class="fa fa-envelope"></i> <strong>Email:</strong><a href="{{ email }}">{{ email }}</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<p>{{ copyright }}</p>
+				</div>
+				<div class="col-md-4">
+					{{ page.footer_social_menu }}
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

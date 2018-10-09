@@ -1,0 +1,23 @@
+name: Octo
+type: theme
+core: 8.x
+version: 1.0.0
+description: This is a theme for implementing the Octo website.
+regions:
+  header_social_menu: "Header Social Menu"
+  main_menu: "Main menu"
+  content: content
+  footer_1: "Footer 1"
+  footer_2: "Footer 2"
+  footer_3: "Footer 3"
+  footer_social_menu: "Footer Social Menu"
+logo: images/logo.png
+screenshot: screenshot.png
+features:
+  - favicon
+  - logo
+libraries:
+  - octo/global-styling
+  - octo/global-scripts
+libraries-override:
+  system/base: true

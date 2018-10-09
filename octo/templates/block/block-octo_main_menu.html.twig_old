@@ -1,0 +1,6 @@
+<ul class="nav nav-pills nav-main">
+	<li><a href="index.html" class="is-active">Home</a></li>
+	<li><a href="about-us.html">About Us</a></li>
+	<li><a href="blog.html">Blog</a></li>
+	<li><a href="contact.html">Contact Us</a></li>
+</ul>

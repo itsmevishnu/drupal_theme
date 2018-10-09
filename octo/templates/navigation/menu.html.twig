@@ -1,0 +1,8 @@
+{% if items %}
+  <ul class="nav nav-pills nav-main">
+    {% for item in items %}
+      {% set classes = [ item.in_active_trail ? 'is-active', ] %}
+      <li><a {{item.attributes.addClass(classes)}} href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}

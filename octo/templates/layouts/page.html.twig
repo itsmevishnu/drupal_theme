@@ -1,0 +1,27 @@
+{% include '@octo/layouts/header.html.twig' %}
+<section class="page-top">
+	<div class="container">
+		<h1>{{ page_title }}</h1>
+	</div>
+</section>
+<div id="content" class="content full">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<article role="article" class="landing">
+						<div class="row">
+							<div class="col-md-6 featured-image">
+								<img alt="{{ node.field_featured_.value[0]['alt'] }}" src="{{ file_url(node.field_featured_.entity.fileuri) }}">
+							</div>
+							<div class="col-md-6 introduction">
+								<h3>{{ node.field_enter_subtitle.value|capitalize }}</h3>
+								<h4>{{ node.field_enter_the_slogan.value }}</h4>
+								<p>{{ node.body.value|raw }}</p>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+{% include '@octo/layouts/footer.html.twig' %}
